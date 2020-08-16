@@ -5,8 +5,7 @@ import 'package:flutter/material.dart';
 import 'TabItem.dart';
 import 'package:vector_math/vector_math.dart' as vector;
 
-typedef MotionTabBuilder = Widget Function(
-);
+typedef MotionTabBuilder = Widget Function();
 
 class MotionTabBar extends StatefulWidget {
   final Color tabIconColor, tabSelectedColor;
@@ -128,7 +127,7 @@ class _MotionTabBarState extends State<MotionTabBar>
           decoration: BoxDecoration(color: Colors.white, boxShadow: [
             BoxShadow(
               color: Colors.black12,
-              offset: Offset(0, -1),
+              offset: Offset(0, -5),
               blurRadius: 5,
             ),
           ]),
@@ -262,7 +261,7 @@ class HalfPainter extends CustomPainter {
     final Rect beforeRect = Rect.fromLTWH(0, (size.height / 2) - 10, 10, 10);
     final Rect largeRect = Rect.fromLTWH(10, 0, size.width - 20, 70);
     final Rect afterRect =
-    Rect.fromLTWH(size.width - 10, (size.height / 2) - 10, 10, 10);
+        Rect.fromLTWH(size.width - 10, (size.height / 2) - 10, 10, 10);
 
     final path = Path();
     path.arcTo(beforeRect, vector.radians(0), vector.radians(90), false);
